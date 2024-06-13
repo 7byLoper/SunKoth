@@ -1,0 +1,6 @@
+name: SunKoth
+version: '1.0'
+main: by.loper.SunKoth.SunKoth
+api-version: '1.16'
+commands:
+  koth:
