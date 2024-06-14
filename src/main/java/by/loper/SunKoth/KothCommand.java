@@ -114,6 +114,7 @@ public class KothCommand implements CommandExecutor, TabCompleter {
                                     SunKoth.getInstance().getConfig().set("Koth.Location.Pos2.x", Manager.getLoc2().getBlockX());
                                     SunKoth.getInstance().getConfig().set("Koth.Location.Pos2.y", Manager.getLoc2().getBlockY());
                                     SunKoth.getInstance().getConfig().set("Koth.Location.Pos2.z", Manager.getLoc2().getBlockZ());
+                                    SunKoth.getInstance().saveConfig();
                                 } else {
                                     p.sendMessage("§7[SunKoth] §cВы не начинали выделение пропишите /wand select");
                                 }
