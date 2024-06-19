@@ -47,8 +47,7 @@ public class Events implements Listener {
                             p.sendMessage(Manager.Message("Koth.BlockPlace"));
                             event.setCancelled(true);
                             return;
-                        }
-                        else if (Manager.getBlockProgress().get(block1.getLocation()) != p){
+                        }else if (Manager.getBlockProgress().get(block1.getLocation()) != p){
                             Player p2 = Manager.getBlockProgress().get(block1.getLocation());
                             Manager.getPlayerProgress().put(p2, Manager.getPlayerProgress().get(p2) - 1);
                             Manager.getBlockProgress().remove(block1.getLocation(), p);
@@ -68,8 +67,7 @@ public class Events implements Listener {
                                 }
                             }
                         }
-                    }
-                    else if(!Manager.getBlockProgress().containsKey(block1.getLocation())){
+                    }else if(!Manager.getBlockProgress().containsKey(block1.getLocation())){
                         block1.setType(Material.RED_CONCRETE);
                         Manager.setBlockProgress(block1.getLocation(), p);
                         if(Manager.getPlayerProgress().containsKey(p)){
@@ -78,8 +76,7 @@ public class Events implements Listener {
                             if(Manager.getPlayerProgress().get(p) >= blocks.size()){
                                 Manager.WinEvent(p);
                             }
-                        }
-                        else{
+                    }else{
                             Manager.getPlayerProgress().put(p, 1);
                             sunkoth.getTask().startTaskAtLocation(block1.getLocation(), p);
                             if(Manager.getPlayerProgress().get(p) >= blocks.size()){
@@ -103,7 +100,7 @@ public class Events implements Listener {
                     player.sendMessage("§fX: §c" + block.getLocation().getBlockX() + "§f Y: §c" + block.getLocation().getBlockY() + "§f Z: §c" + block.getLocation().getBlockZ());
                     Manager.setLoc2(block.getLocation());
                     event.setCancelled(true);
-                } else if (event.getAction() == Action.LEFT_CLICK_BLOCK && block != null) {
+                }else if (event.getAction() == Action.LEFT_CLICK_BLOCK && block != null) {
                     player.sendMessage("§fВы§a выделили §e1 точку§f на координатах");
                     player.sendMessage("§fX: §c" + block.getLocation().getBlockX() + "§f Y: §c" + block.getLocation().getBlockY() + "§f Z: §c" + block.getLocation().getBlockZ());
                     Manager.setLoc1(block.getLocation());
